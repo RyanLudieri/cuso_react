@@ -8,6 +8,7 @@ function App() {
 
   const m = 15;
   const [name] = useState("Matheus")
+  const redTitle = false
 
   return (
     <div className="App">
@@ -34,6 +35,10 @@ function App() {
         ? ({color: "green",  backgroundColor: "#000"}) 
         : null}>
         Teste nome
+      </h2>
+      {/* Classe dinamica*/}
+      <h2 className={redTitle ? "red-title" : "title"}>
+        Este título vai ter classe dinamica
       </h2>
     </div>
   );
