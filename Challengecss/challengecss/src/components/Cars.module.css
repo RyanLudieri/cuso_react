@@ -1,0 +1,14 @@
+h2 {
+    color: #1e88e5;
+    font-size: 24px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  
+  p {
+    font-family: 'Georgia', serif;
+    margin: 4px 0;
+    color: white;
+    font-style: italic;
+    font-size: 16px;
+  }
