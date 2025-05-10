@@ -1,13 +1,24 @@
+import { useState } from 'react'
 import './MyForm.css'
 
 const MyForm = () => {
+
+  const [name,setName] = useState();
+  const [email,setEmail] = useState()
+  
+  const handleName = (e) => {
+    setName(e.target.value)
+  }
+    
+  console.log(name);
+
   return (
     <div>
         {/*Criação de form */}
         <form>
             <div>
                 <label htmlFor="name">Name:</label>
-                <input type="text" name="name" placeholder='Digite o seu nome'/>
+                <input type="text" name="name" placeholder='Digite o seu nome' onChange={handleName}/>
             </div>
             {/*label envolvendo input */}
             <label>
