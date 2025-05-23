@@ -34,6 +34,26 @@
       "id": "3eb0",
       "name": "Coldre",
       "price": "20"
+    },
+    {
+      "id": "b811",
+      "name": "Monitor",
+      "price": "400"
+    },
+    {
+      "id": "3003",
+      "name": "Jeans",
+      "price": "70"
+    },
+    {
+      "id": "d807",
+      "name": "Faca",
+      "price": "20"
+    },
+    {
+      "id": "dd7f",
+      "name": "Cabo HDMI",
+      "price": "8"
     }
   ]
 }
