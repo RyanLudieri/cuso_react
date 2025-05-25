@@ -10,12 +10,14 @@ export const useFetch = (url) => {
     const [config, setConfig] = useState(null)
     const [method, setMethod] = useState(null)
     const [callFetch, setCallFetch] = useState(false)
+    const [itemId, setItemId] = useState(null)
 
     // 6 - loading
     const [loading, setLoading] = useState(false);
 
     // 7 - tratando erros
     const [error, setError] = useState(null);
+
 
     const httpConfig = (data, method) => {
         if (method === "POST"){
@@ -27,6 +29,15 @@ export const useFetch = (url) => {
                 body: JSON.stringify(data)
             });
 
+            setMethod(method);
+        }else if(method === "DELETE"){
+            setConfig({
+                method,
+                headers: {
+                    "Content-type": "application/json"
+                }
+            });
+            setItemId(data.id);
             setMethod(method);
         }
     };
@@ -59,20 +70,30 @@ export const useFetch = (url) => {
     // 5 - refatorando post
     useEffect(() => {
         const httpRequest = async () => {
+
+            let json
+
             if(method === "POST"){
 
                 let fetchOptions = [url, config];
 
                 const res = await fetch(...fetchOptions);
 
-                const json = await res.json();
+                json = await res.json();
 
-            setCallFetch(json);
+            } else if (method === "DELETE"){
+                let deleteUrl = `${url}/${itemId}`
+
+                const res = await fetch(deleteUrl, config);
+
+                json = await res.json();   
+                
             }
+            setCallFetch(json)
         };
 
         httpRequest();
-    }, [config, method, url])
+    }, [config, ,method, url, itemId])
 
     return {data, httpConfig, loading, error};
 };

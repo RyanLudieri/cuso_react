@@ -1,11 +1,6 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Camisa",
-      "price": 59.9
-    },
-    {
       "id": "2",
       "name": "Calça vermelha",
       "price": 90
@@ -61,14 +56,9 @@
       "price": "60"
     },
     {
-      "id": "df48",
-      "name": "Cadeira",
-      "price": "20"
-    },
-    {
-      "id": "d80d",
-      "name": "Moletom",
-      "price": "90"
+      "id": "7aac",
+      "name": "Blusa",
+      "price": "60"
     }
   ]
 }

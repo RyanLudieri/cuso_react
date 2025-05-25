@@ -1,6 +1,6 @@
 import './App.css';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 // 4 - custom hook
 import { useFetch } from './hooks/useFetch';
@@ -80,6 +80,12 @@ function App() {
             && items.map((product) => (
               <li key={product.id}>
                   {product.name} - R$: {product.price}
+                  <button 
+                    className='delete-button'
+                    onClick={() => httpConfig({ id: product.id }, "DELETE")}
+                    >
+                    Delete
+                    </button>
               </li>
           ))}
         </ul>
