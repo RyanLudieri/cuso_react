@@ -93,7 +93,7 @@ export const useFetch = (url) => {
         };
 
         httpRequest();
-    }, [config, ,method, url, itemId])
+    }, [config,method, url, itemId])
 
     return {data, httpConfig, loading, error};
 };
